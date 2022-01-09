@@ -1,5 +1,4 @@
-import React from 'react';
-import { FaStar } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa'
 
 const Rating = ({rating}) => {
   const totalRating = []
@@ -23,7 +22,7 @@ const Rating = ({rating}) => {
     <div className='rating'>
         <ul>{totalRating}</ul>
     </div>
-  );
-};
+  )
+}
 
-export default Rating;
+export default Rating

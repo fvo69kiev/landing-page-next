@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react';
-import { Box } from 'theme-ui';
-import RcDrawer from 'rc-drawer';
+import { Box } from 'theme-ui'
+import RcDrawer from 'rc-drawer'
 
 export default function Drawer ({ 
   className,
@@ -17,7 +16,7 @@ export default function Drawer ({
   ...props
 }) {
   return (
-      <Fragment>
+      <>
         <RcDrawer
           open={open}
           onClose={toggleHandler}
@@ -34,16 +33,18 @@ export default function Drawer ({
                     {closeButton}
                 </Box>
             )}
-            <Box sx={drawerStyle}>{children}</Box>
+            <Box sx={drawerStyle}>
+                {children}
+            </Box>
         </RcDrawer>
         <Box className='drawer__handler' style={{display: 'inline-block'}} onClick={toggleHandler}>
             {drawerHandler}
         </Box>
-      </Fragment>
-  );
-};
+      </>
+  )
+}
 
 Drawer.defaultProps = {
   width: '320px',
   placement: 'left',
-};
+}

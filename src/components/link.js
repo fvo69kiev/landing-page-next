@@ -4,7 +4,11 @@ import NextLink from 'next/link';
 
 export function NavLink({ path, label, children, ...rest }) {
   return (
-    <h1>NavLink</h1>
+      <NextLink {...rest} href={path}>
+          <MenuLink>
+              {children || label}
+          </MenuLink>
+      </NextLink>
   );
 }
 

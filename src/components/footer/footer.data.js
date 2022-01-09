@@ -2,23 +2,23 @@ export default {
   menuItem: [
     {
       path: '/',
-      label: 'Home',
+      label: 'Договор',
     },
     {
       path: '/',
-      label: 'Adversite',
+      label: 'Политика конфиденциальности',
     },
     {
       path: '/',
-      label: 'Supports',
+      label: 'Часто задаваемые вопросы',
     },
     {
       path: '/',
-      label: 'Marketing',
+      label: 'Доставка',
     },
     {
       path: '/',
-      label: 'Contact',
+      label: 'Контакты',
     },
   ],
-};
+}

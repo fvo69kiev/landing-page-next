@@ -1,41 +1,30 @@
 /** @jsx jsx */
-import { jsx, Container, Box, Image } from 'theme-ui';
-import TextFeature from 'components/text-feature';
+import { jsx, Container, Box, Image } from 'theme-ui'
+import TextFeature from 'components/text-feature'
 
-import FeatureThumb from 'assets/core-feature.png';
-import shapePattern from 'assets/shape-pattern2.png';
 
-const data = {
-  subTitle: 'Core features',
-  title: 'Smart Jackpots that you may love this anytime & anywhere',
-  description:
-    'Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever.',
-  btnName: 'Get Started',
-  btnURL: '#',
-};
-
-export default function CoreFeature() {
+export default function CoreFeature({data}) {
   return (
    <section sx={{variant: 'section.coreFeature'}}>
     <Container sx={styles.containerBox}>
       <Box sx={styles.contentBox}>
-        <TextFeature 
+        <TextFeature
           subTitle={data.subTitle}
           title={data.title}
           description={data.description}
-          btnName={data.btnName}
-          btnURL={data.btnURL}
+          // btnName={data.btnName}
+          // btnURL={data.btnURL}
         />
       </Box>
       <Box sx={styles.thumbnail}>
-        <Image src={FeatureThumb} alt="Thumbnail" />
-        <Box sx={styles.shapeBox}>
-          <Image src={shapePattern} alt="Shape"/>
-        </Box>
+        <Image src={data.img} alt={data.title} />
+        {/*<Box sx={styles.shapeBox}>*/}
+        {/*  <Image src={shapePattern} alt="Shape"/>*/}
+        {/*</Box>*/}
       </Box>
     </Container>
    </section>
-  );
+  )
 }
 
 const styles = {
@@ -44,7 +33,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     flexWrap: ['wrap', null, null, 'nowrap'],
-    pb: [0, 7, 0, null, 7],
+    pt: [0, 7, 0, null, 7],
   },
   contentBox: {
     flexShrink: 0,
@@ -66,6 +55,7 @@ const styles = {
       position: 'relative',
       zIndex: 1,
       height: [310, 'auto'],
+      borderRadius: '20px',
     },
   },
   shapeBox: {
@@ -75,4 +65,4 @@ const styles = {
     zIndex: -1,
     display: ['none', 'inline-block', 'none', null, 'inline-block'],
   },
-};
+}

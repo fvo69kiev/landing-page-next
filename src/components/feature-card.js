@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Image, Box, Heading, Text } from 'theme-ui';
+import { jsx, Image, Box, Heading, Text } from 'theme-ui'
 
 export default function FeatureCard({
   src,
@@ -15,7 +15,7 @@ export default function FeatureCard({
           <Text sx={styles.wrapper.subTitle}>{text}</Text>
         </Box>
       </Box>
-  );
+  )
 }
 
 const styles = {
@@ -51,4 +51,4 @@ const styles = {
       lineHeight: '1.9',
     },
   },
-};
+}

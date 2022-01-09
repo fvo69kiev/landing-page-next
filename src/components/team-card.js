@@ -1,11 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Text, Heading, Image, Box, Link } from 'theme-ui';
+import {jsx, Text, Heading, Image, Box, Link } from 'theme-ui'
 
-export default function TeamCard({ src, altText, title, designation, social }) {
+export default function TeamCard({ src, title, designation, social }) {
   return (
       <Box sx={styles.card}>
-        <Image src={src} alt={altText} sx={styles.memberThumb} />
+        <Image src={src} alt={title} sx={styles.memberThumb} />
         <Box sx={styles.infoWrapper}>
           <Heading className='info__name' sx={styles.infoWrapper}>
             {title}
@@ -22,7 +21,7 @@ export default function TeamCard({ src, altText, title, designation, social }) {
           ))}
         </Box>
       </Box>
-  );
+  )
 }
 
 const styles = {
@@ -32,11 +31,12 @@ const styles = {
     flexDirection: 'column',
     py: [0, null, 4, 5, 6],
     px: [2, null, 6, 7],
-    transition: 'ease-in-out 0.4s',
+    transition: 'ease-in-out 0.3s',
     borderRadius: '8px',
     position: 'relative',
     '&:hover': {
-      boxShadow: ['none', null, '0 4px 10px rgba(39, 83, 123, 0.12)'],
+      boxShadow: ['none', null, '0px 4px 25px rgba(234,58,96, 0.45)'],
+      backgroundColor: 'background_secondary',
       '.info__name': {
         color: 'primary',
       },
@@ -54,8 +54,8 @@ const styles = {
   },
 
   memberThumb: {
-    width: ['70px', '80px', '100px', null, null, '130px'],
-    height: ['70px', '80px', '100px', null, null, '130px'],
+    width: ['70px', '80px', '100px', null, null, '175px'],
+    height: ['70px', '80px', '100px', null, null, '175px'],
     flexShrink: 0,
     border: '2px solid',
     borderColor: 'primary',
@@ -93,7 +93,7 @@ const styles = {
     opacity: [1, null, 0],
     pt: 2,
     a: {
-      fontSize: [0, 1, null, 2],
+      fontSize: [0, 2, null, 3],
       color: ['text', null, 'primary'],
       lineHeight: '1em',
       my: [0, null, '-2px'],
@@ -104,4 +104,4 @@ const styles = {
       },
     },
   },
-};
+}

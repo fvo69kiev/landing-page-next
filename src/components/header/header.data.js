@@ -1,18 +1,22 @@
 export default [
   {
-    path: 'home',
-    label: 'Home',
-  },
-  {
-    path: 'feature',
-    label: 'Features',
+    path: 'building',
+    label: 'Строительство',
   },
   {
     path: 'pricing',
-    label: 'Pricing',
+    label: 'Продажа',
   },
   {
-    path: 'testimonial',
-    label: 'Testimonial',
+    path: 'rent',
+    label: 'Аренда',
   },
-];
+  {
+    path: 'showroom',
+    label: 'Шоу-рум',
+  },
+  {
+    path: 'team',
+    label: 'Контакты',
+  },
+]

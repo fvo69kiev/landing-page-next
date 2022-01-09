@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import {Box, jsx} from 'theme-ui';
-import { Scrollbars } from 'react-custom-scrollbars';
-import Drawer from 'components/drawer';
-import { IoMdClose, IoMdMenu } from 'react-icons/io';
-import { Link } from 'react-scroll';
-import { FaFacebookF, FaTwitter, FaGithubAlt, FaDribbble } from 'react-icons/fa';
-import menuItems from './header.data';
+import { useState } from 'react'
+import {jsx, Box } from 'theme-ui'
+import { Scrollbars } from 'react-custom-scrollbars'
+import Drawer from 'components/drawer'
+import { IoMdClose, IoMdMenu } from 'react-icons/io'
+import { Link } from 'react-scroll'
+import { FaFacebookF, FaTwitter, FaGithubAlt, FaDribbble } from 'react-icons/fa'
+import menuItems from './header.data'
 
 const social = [
   {
@@ -24,7 +24,7 @@ const social = [
     path: '/',
     icon: <FaDribbble />,
   },
-];
+]
 
 export default function MobileDrawer() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -71,8 +71,8 @@ export default function MobileDrawer() {
           </Box>
         </Scrollbars>
       </Drawer>
-  );
-};
+  )
+}
 
 const styles = {
   handler: {
@@ -180,4 +180,4 @@ const styles = {
     justifyContent: 'center',
     py: '0',
   },
-};
+}

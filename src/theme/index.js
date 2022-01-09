@@ -1,20 +1,21 @@
 export default {
-  // example colors with dark mode
+  // example colors with dark mode-----------------------
   colors: {
-    text: '#343D48', // body color and primary color
-    text_secondary: '#02073E', // secondary body color
-    heading: '#0F2137', // primary heading color
-    heading_secondary: '#0F2137', // heading color
-    background: '#FFFFFF', // body background color
+    text: '#343D48',                 // body color and primary color
+    text_secondary: '#02073E',       // secondary body color
+    heading: '#0F2137',              // primary heading color
+    heading_secondary: '#0F2137',    // heading color
+    background: '#FFFFFF',           // body background color
     background_secondary: '#F9FBFD', // secondary background color
-    border_color: '#E5ECF4', // border color
-    yellow: '#FFA740', // border color
-    primary: '#EA3A60', // primary button and link color
-    secondary: '#2563FF', // secondary color - can be used for hover states
-    muted: '#E4E4E4', // muted color
-    accent: '#609', // a contrast color for emphasizing UI
+    border_color: '#E5ECF4',         // border color
+    yellow: '#FFA740',               // border color
+    primary: '#EA3A60',             // primary button and link color
+    primary_dark: '#D32047',        // primary button-dark
+    secondary: '#2563FF',            // secondary color - can be used for hover states
+    muted: '#E4E4E4',                // muted color
+    accent: '#609',                  // a contrast color for emphasizing UI
 
-    // highlight	a background color for highlighting text
+    // highlight a background color for highlighting text
     modes: {
       dark: {
         text: '#fff',
@@ -25,6 +26,8 @@ export default {
       },
     },
   },
+
+  // breakpoints------------------------------
   breakpoints: [
     '480px',
     '640px',
@@ -34,6 +37,8 @@ export default {
     '1366px',
     '1620px',
   ],
+
+  //fonts----------------------------------
   fonts: {
     body: "'DM Sans', sans-serif",
     heading: "'DM Sans', sans-serif",
@@ -54,7 +59,8 @@ export default {
     heading: '-0.5px',
   },
   space: [0, 5, 10, 15, 20, 25, 30, 50, 80, 100, 120, 150],
-  // variants can use custom, user-defined names
+
+  // variants can use custom, user-defined names--------------
   layout: {
     container: {
       maxWidth: [
@@ -83,35 +89,50 @@ export default {
     },
     main: {},
   },
+
+  //section----------------------------------------------
   section: {
     keyFeature: {
       pt: [8, null, 9, null, null, 10],
-      pb: ['90px', null, 9, null, null, 10, null, '165px'],
+      pb: ['90px', null, 9, null, null, 10, null, '125px'],
     },
-    feature: {
-      pb: [8, null, 9, null, null, 10, null, '170px'],
+    building: {
+      pt: [8, null, 9, null, null, 10, null, '125px'],
+      pb: [8, null, 9, null, null, 10, null, '125px'],
     },
     news: {
-      pb: [8, null, 9, null, null, 10, null, '170px'],
+      pb: [8, null, 9, null, null, 10, null, '125px'],
     },
     coreFeature: {
-      pb: [8, null, 9, null, null, 10, null, '170px'],
+      pb: [8, null, 9, null, null, 10, null, '125px'],
       overflow: 'hidden',
     },
-    testimonial: {
-      pt: [8, null, 8, '70px', null, 8, null, '145px'],
-      pb: ['90px', null, 9, null, null, 10, null, '190px'],
+    rent: {
+      pt: [8, null, 8, '70px', null, 8, null, '125px'],
+      pb: ['90px', null, 9, null, null, 10, null, '125px'],
       overflow: 'hidden',
     },
-    services: {
-      pb: ['90px', null, 9, null, null, 10, null, '150px'],
-    },
+    // services: {
+    //   pb: ['90px', null, 9, null, null, 10, null, '125px'],
+    // },
+
     pricing: {
-      pt: [8, null, 9, null, null, 10, null, '180px'],
-      pb: ['90px', null, 9, null, null, 10, null, '180px'],
+      pt: [8, null, 9, null, null, 10, null, '125px'],
+      pb: ['90px', null, 9, null, null, 10, null, '125px'],
+    },
+    showroom: {
+      pt: [8, null, 8, '70px', null, 8, null, '125px'],
+      pb: ['90px', null, 9, null, null, 10, null, '125px'],
+      overflow: 'hidden',
+    },
+    team: {
+      pt: [8, null, 8, '70px', null, 8, null, '125px'],
+      pb: ['90px', null, 9, null, null, 10, null, '125px'],
+      overflow: 'hidden',
     },
   },
-  sectionHeader: {
+  //sectionHeader---------------------------------------
+  slogan: {
     width: ['100%', null, '540px'],
     display: 'flex',
     flexDirection: 'column',
@@ -119,26 +140,27 @@ export default {
     mt: ['-3px', null, -1],
     marginBottom: ['50px', null, '60px', null, null, '65px', null, '80px'],
     mx: 'auto',
-    title: {
-      fontSize: ['24px', null, '28px', null, null, '32px', null, '36px'],
-      color: 'heading',
-      lineHeight: [1.3, null, null, 1.25],
-      textAlign: 'center',
-      fontWeight: '700',
-      letterSpacing: '-.5px',
-    },
-
-    subTitle: {
-      fontSize: [0, '13px', null, '14px'],
-      color: 'primary',
-      textAlign: 'center',
-      letterSpacing: ['1.5px', null, '2px'],
-      textTransform: 'uppercase',
-      fontWeight: '700',
-      mb: 2,
-      lineHeight: 1.5,
-    },
+      title: {
+        fontSize: ['24px', null, '28px', null, null, '32px', null, '36px'],
+        color: 'heading',
+        lineHeight: [1.3, null, null, 1.25],
+        textAlign: 'center',
+        fontWeight: '700',
+        letterSpacing: '-.5px',
+      },
+      subTitle: {
+        fontSize: [0, '13px', null, '14px'],
+        color: 'primary',
+        textAlign: 'center',
+        letterSpacing: ['1.5px', null, '2px'],
+        textTransform: 'uppercase',
+        fontWeight: '700',
+        mb: 2,
+        lineHeight: 1.5,
+      },
   },
+
+  //text----------------------------------------
   text: {
     heading: {
       fontFamily: 'heading',
@@ -155,10 +177,10 @@ export default {
         '36px',
         '42px',
         '40px',
-        '42px',
-        '52px',
-        '58px',
-        '66px',
+        '45px',
+        '55px',
+        '60px',
+        '75px',
       ],
       lineHeight: [1.3, null, null, null, null, 1.2],
       fontWeight: 700,
@@ -198,6 +220,8 @@ export default {
       lineHeight: '40px',
     },
   },
+
+  //links----------------------------------------
   links: {
     default: {
       cursor: 'pointer',
@@ -231,6 +255,8 @@ export default {
       display: 'flex',
     },
   },
+
+  // images------------------------------------
   images: {
     avatar: {
       width: 48,
@@ -238,7 +264,8 @@ export default {
       borderRadius: 99999,
     },
   },
-  // variants for buttons
+
+  // variants for buttons---------------------
   buttons: {
     menu: {
       display: [null, null, 'none'],
@@ -297,6 +324,8 @@ export default {
       },
     },
   },
+
+  //cards----------------------------------
   cards: {
     primary: {
       padding: 2,
@@ -321,6 +350,8 @@ export default {
       p: 3,
     },
   },
+
+  //forms-------------------------------
   forms: {
     label: {
       fontSize: 1,
@@ -338,6 +369,7 @@ export default {
     },
   },
 
+  //badges--------------------------------------------
   badges: {
     primary: {
       color: 'background',
@@ -354,6 +386,7 @@ export default {
     },
   },
 
+  //styles----------------------------------------
   styles: {
     // To add base, top-level styles to the <body> element, use theme.styles.root.
     root: {
@@ -370,16 +403,20 @@ export default {
         width: 'auto',
       },
     },
-    // Divider styles
+
+    // Divider styles---------------------------
     hr: {
       border: 0,
       borderBottom: '1px solid',
       borderColor: '#D9E0E7',
     },
-    // also you can use other HTML elements style here
+
+    // also you can use other HTML elements style here----
     ul: {
       listStyle: 'none',
     },
+
+    //srOnly------------------------------------
     srOnly: {
       border: '0 !important',
       clip: 'rect(1px, 1px, 1px, 1px) !important',
@@ -393,4 +430,5 @@ export default {
       whiteSpace: 'nowrap !important',
     },
   },
-};
+
+}

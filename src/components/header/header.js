@@ -1,17 +1,26 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Button } from 'theme-ui';
-import { keyframes } from '@emotion/core';
-import { Link } from 'react-scroll';
-import Logo from 'components/logo';
-import LogoDark from 'assets/logo.svg';
-import MobileDrawer from './mobile-drawer';
-import menuItems from './header.data';
+import { jsx, Container, Flex, Button } from 'theme-ui'
+import { keyframes } from '@emotion/core'
+import { Link } from 'react-scroll'
+import Logo from 'components/logo'
+import LogoSvg from 'assets/logo.svg'
+import MobileDrawer from './mobile-drawer'
+import menuItems from './header.data'
 
 export default function Header({ className }) {
   return (
       <header sx={styles.header} className={className} id='header'>
         <Container sx={styles.container}>
-          <Logo src={LogoDark} />
+          <Link
+              to='home'
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={700}
+          >
+            <Logo src={LogoSvg} sx={styles.logo} title='Дом из морских контейнеров' />
+          </Link>
+
           <Flex as='nav' sx={styles.nav}>
             {menuItems.map((menuItem, i) => (
                 <Link
@@ -20,20 +29,24 @@ export default function Header({ className }) {
                   spy={true}
                   smooth={true}
                   offset={-70}
-                  duration={500}
+                  duration={700}
                   key={i}
                 >
                   {menuItem.label}
                 </Link>
             ))}
           </Flex>
-          <Button className='donate__btn' variant='secondary' arial-label='Cet started' >
-            Get Started
+          <Button
+              className='donate__btn'
+              variant='secondary'
+              arial-label='Get consultation'
+          >
+            Получить консультацию
           </Button>
           <MobileDrawer />
         </Container>
       </header>
-  );
+  )
 }
 
 const positionAnim = keyframes`
@@ -41,11 +54,10 @@ const positionAnim = keyframes`
     position: fixed;
     opacity: 1;
   }
-
   to {
     position: absolute;
     opacity: 1;
-    transition: all 0.4s ease;
+    transition: all 0.7s ease;
   }
 `;
 
@@ -58,7 +70,7 @@ const styles = {
     position: 'absolute',
     top: 0,
     left: 0,
-    backgroundColor: 'transparent',
+    backgroundColor: 'white',
     transition: 'all 0.4s ease',
     animation: `${positionAnim} 0.4s ease`,
     '.donate__btn': {
@@ -82,6 +94,10 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  logo: {
+    width: '65px',
+    height: '40px',
+  },
   nav: {
     mx: 'auto',
     display: 'none',
@@ -103,4 +119,4 @@ const styles = {
       },
     },
   },
-};
+}

@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Flex } from 'theme-ui';
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
+import { jsx, Box, Container, Flex } from 'theme-ui'
+import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io'
 
 export default function ButtonGroup({ next, previous }) {
   return (
@@ -16,22 +16,21 @@ export default function ButtonGroup({ next, previous }) {
           </Box>
         </Container>
       </Flex>
-  );
+  )
 }
 
 const styles = {
   buttonGroup: {
     display: 'flex',
     justifyContent: 'center',
-    mb: -4,
     button: {
       bg: 'transparent',
-      border: '0px solid',
-      fontSize: 40,
+      border: '0 solid',
+      fontSize: 50,
       cursor: 'pointer',
-      px: '2px',
-      color: '#BBC7D7',
-      transition: 'all 0.25s',
+      // px: '-5px',
+      color: 'primary',
+      transition: 'all 0.3s',
       '&:hover': {
         color: 'text',
       },
@@ -40,4 +39,4 @@ const styles = {
       },
     },
   },
-};
+}

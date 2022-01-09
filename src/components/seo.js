@@ -1,11 +1,10 @@
-import React from 'react';
-import Head from 'next/head';
+import Head from 'next/head'
 
 export default function SEO({
-  description = 'startup product landing page',
-  author = 'JSM',
+  description = 'Дом из морских контейнеров',
+  author = 'Виктор',
   meta,
-  title = 'startup landing title',
+  title = 'Дом из морских контейнеров',
 }) {
   const metaData = [
     {
@@ -49,10 +48,10 @@ export default function SEO({
         <meta key={i} name={name} content={content} />
       ))}
     </Head>
-  );
+  )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ru`,
   meta: [],
-};
+}

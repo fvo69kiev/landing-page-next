@@ -1,17 +1,13 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Image, Text } from 'theme-ui';
-import { Link } from 'components/link';
-import data from './footer.data';
-import FooterLogo from 'assets/logo.svg';
+import { jsx, Box, Container, Text } from 'theme-ui'
+import { Link } from 'components/link'
+import data from './footer.data'
 
 export default function Footer() {
   return (
-    <footer sx={styles.footer}>
+    <footer sx={styles.footer} id='contacts'>
       <Container>
         <Box sx={styles.footer.footerBottomArea}>
-          <Link path='/'>
-            <Image src={FooterLogo} alt='Logo' />
-          </Link>
           <Box sx={styles.footer.menus}>
             <nav>
               {data.menuItem.map((item, i) => (
@@ -25,12 +21,12 @@ export default function Footer() {
             </nav>
           </Box>
           <Text sx={styles.footer.copyright}>
-            Copyright by {new Date().getFullYear()} Company Name
+            Copyright by {new Date().getFullYear()} <span>House of shipping containers</span>
           </Text>
         </Box>
       </Container>
     </footer>
-  );
+  )
 }
 
 const styles = {
@@ -39,8 +35,8 @@ const styles = {
       borderTop: '1px solid',
       borderTopColor: 'border_color',
       display: 'flex',
-      pt: [7, null, 8],
-      pb: ['40px', null, '100px'],
+      pt: [2, null, 3],
+      pb: ['20px', null, '30px'],
       textAlign: 'center',
       flexDirection: 'column',
     },
@@ -73,6 +69,10 @@ const styles = {
     copyright: {
       fontSize: [1, '15px'],
       width: '100%',
+      span: {
+        marginLeft: '5px',
+        fontWeight: 500,
+      },
     },
   },
-};
+}

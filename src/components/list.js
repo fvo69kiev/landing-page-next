@@ -1,5 +1,4 @@
-import React from 'react';
-import { Flex, Box, IconButton } from 'theme-ui';
+import { Flex, Box, IconButton } from 'theme-ui'
 
 export default function List({ items = [], parentStyle, childStyle }) {
   return (
@@ -19,14 +18,14 @@ export default function List({ items = [], parentStyle, childStyle }) {
                 sx={{...childStyle}}
                 key={i}
             >
-                <IconButton sx={styles.listIcon} aria-label='list icon'>
+                <IconButton sx={styles.listIcon} aria-label='list icon' title={item.title}>
                     {item.icon}
                 </IconButton>
                 {item.text}
             </Flex>
         ))}
       </Box>
-  );
+  )
 }
 
 const styles = {
@@ -41,4 +40,4 @@ const styles = {
     justifyContent: 'flex-start',
     mt: '2px',
   },
-};
+}

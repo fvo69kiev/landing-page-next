@@ -1,18 +1,25 @@
-import { Box, Card, Text, Heading, Button } from 'theme-ui';
-import React from 'react';
-import List from './list';
+import {Box, Card, Text, Heading, Button, Image} from 'theme-ui'
+import List from './list'
+import {useRouter} from "next/router"
+
 
 export default function PriceCard({
-  data: {
-    header,
-    name,
-    description,
-    priceWithUnit,
-    buttonText = 'Start Free Trial',
-    anotherOption,
-    points,
-  },
-}) {
+    data: {
+      id,
+      header,
+      name,
+      imgDescription,
+      description,
+      source,
+      priceWithUnit,
+      buttonText = 'Подробнее',
+      anotherOption,
+      points,
+    },
+  })  {
+  const router = useRouter()
+  const handleMore = () => {return router.push(`${source}`)}
+
   return (
       <Card
         className={header ? 'package__card active' : 'package__card'}
@@ -24,38 +31,45 @@ export default function PriceCard({
             <Heading className='package__name' variant='title'>
               {name}
             </Heading>
-            <Text as='p'>{description}</Text>
+            <Box sx={styles.description}>
+              {id === 1 && <Image sx={styles.imgDescription} style={{marginRight: '5px'}} src={imgDescription} alt={name} />}
+              {id === 2 && <Image sx={styles.imgDescription} style={{marginRight: '5px'}} src={imgDescription} alt={name} />}
+              {id === 3 && <Image sx={styles.imgDescription} style={{marginRight: '10px'}} src={imgDescription} alt={name} />}
+              {id === 4 && <>
+                <Image sx={styles.imgDescription} style={{marginRight: '3px'}} src={imgDescription} alt={name} />
+                <Image sx={styles.imgDescription} style={{marginRight: '10px'}} src={imgDescription} alt={name} />
+              </>}
+              <Text as='p'>{description}</Text>
+            </Box>
           </Box>
           <List items={points} childStyle={styles.listItem} />
-          <Text className='package__price' sx={styles.price}>
-            {priceWithUnit}
-            <span>/Monthly</span>
-          </Text>
+          <Box sx={styles.pricePerson}>
+            <Image sx={styles.imgPerson} src={anotherOption}  alt={name} />
+            <Text className='package__price' sx={styles.price}>
+              {priceWithUnit}
+            </Text>
+          </Box>
           <Box sx={styles.buttonGroup}>
-            <Button variant='primary' arial-label={buttonText}>
-              {buttonText}
-            </Button>
-            {anotherOption && (
-                <Button
-                  variant='textButton'
-                  className='free__trial'
-                  arial-label={anotherOption}
-                  sx={{color: 'black'}}
-                >
-                  {anotherOption}
-                </Button>
-            )}
+              <Button
+                  variant='primary'
+                  arial-label={buttonText}
+                  onClick={handleMore}
+              >
+                {buttonText}
+              </Button>
           </Box>
         </Box>
       </Card>
-  );
+  )
 }
 
 const styles = {
   pricingBox: {
+    backgroundColor: 'white',
     borderRadius: 20,
     position: 'relative',
     transition: 'all 0.3s',
+    opacity: .85,
     p: ['35px 25px', null, null, '40px'],
     width: ['100%', '75%', '100%'],
     mb: '40px',
@@ -74,7 +88,8 @@ const styles = {
       zIndex: -1,
     },
     '&:hover': {
-      boxShadow: '0px 4px 25px rgba(38, 78, 118, 0.1) !important',
+      boxShadow: '0px 4px 25px rgba(234,58,96, 0.45)',
+      opacity: 1,
       '&:before': {
         opacity: 0,
       },
@@ -95,6 +110,15 @@ const styles = {
     top: '-17px',
     letterSpacing: '-.14px',
     px: '12px',
+  },
+  description: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'start',
+  },
+  imgDescription: {
+    width: '35px',
+    height: '30px',
   },
   pricingHeader: {
     justifyContent: 'space-between',
@@ -129,7 +153,7 @@ const styles = {
     },
   },
   listItem: {
-    fontFamily: 'DM Sans',
+    // fontFamily: 'DM Sans',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: [1, 2],
@@ -154,6 +178,18 @@ const styles = {
       fontWeight: 700,
       fontSize: ['14px', 1],
       p: '20px 0 0',
+      Link: {
+        target: '_blank',
+      }
     },
   },
-};
+  pricePerson: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  imgPerson: {
+    width: '65px',
+    height: '65px',
+  }
+}

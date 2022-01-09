@@ -1,31 +1,111 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
-import BannerImg from 'assets/banner-thumb.png';
-import ShapeLeft from 'assets/shape-left.png';
-import ShapeRight from 'assets/shape-right.png';
+import {jsx, Container, Box, Heading, Text, Image, Button } from 'theme-ui'
+// import {Parallax} from 'react-parallax'
+
+import Carousel from 'react-multi-carousel'
+import ButtonGroup from "../components/button-group"
+
+import BgBanner from 'assets/banner/banner.jpg'
+
+import Home from 'assets/banner/home.svg'
+import Relax from 'assets/banner/relax.svg'
+import Office from 'assets/banner/office.svg'
+import Warehouse from 'assets/banner/warehouse.svg'
+import Cafe from 'assets/banner/cafe.svg'
+import Tools from 'assets/banner/tools.svg'
+import Bytovka from 'assets/banner/bytovka.svg'
+
+
+const data = [
+  {id: 1, title: 'дом', img: Home},
+  {id: 2, title: 'дача', img: Relax},
+  {id: 3, title: 'офис', img: Office},
+  {id: 4, title: 'склад', img: Warehouse},
+  {id: 5, title: 'кофейня', img: Cafe},
+  {id: 6, title: 'мастерская', img: Tools},
+  {id: 7, title: 'бытовка', img: Bytovka},
+]
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1619 },
+    items: 4,
+    slidesToSlide: 4, // optional, default to 1.
+  },
+  laptop: {
+    breakpoint: { max: 1619, min: 1024 },
+    items: 3,
+    slidesToSlide: 3, // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 640 },
+    items: 2,
+    slidesToSlide: 2, // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 639, min: 0 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+}
+
+const carouselParams = {
+  additionalTransfrom: 1,
+  arrows: false,
+  autoPlaySpeed: 3000,
+  centerMode: false,
+  className: "",
+  containerClass: "carousel-container",
+  customButtonGroup: <ButtonGroup />,
+  dotListClass: "",
+  draggable: true,
+  focusOnSelect: false,
+  infinite: true,
+  itemClass: "",
+  keyBoardControl: true,
+  minimumTouchDrag: 80,
+  renderButtonGroupOutside: true,
+  renderDotsOutside: false,
+  responsive: responsive,
+  showDots: false,
+  sliderClass: "",
+  slidesToSlide: 1,
+  items: 3,
+}
 
 export default function Banner() {
   return (
+      // <Parallax bgImage={BgBanner} strength={500}>
     <section sx={styles.banner} id='home'>
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
-          <Heading as='h1' variant='heroPrimary'>
-            Top Quality Digital Products to Explore
+          <Heading as='h1' variant='heroPrimary' style={{color: 'white'}}>
+            Дом из морских контейнеров
           </Heading>
-          <Text as='p' variant='heroSecondary'>
-            Check out our website to find great software products and deals!
-            If you need a website or a web application this is the place to go!
+          <Text as='p' variant='heroSecondary' style={{color: 'white'}}>
+            под ключ за 1 месяц
           </Text>
-          <Button variant='primary'>Explore</Button>
-        </Box>
-
-        <Box sx={styles.banner.imageBox}>
-          <Image src={BannerImg} alt='banner' />
+          <Box  >
+            <Carousel {...carouselParams}>
+              {data.map((item) => (
+                  <Box key={item.id} style={{marginRight: '10px'}}>
+                    <Image src={item.img} alt={item.title} width={100} height={75} />
+                    <Text as='p' style ={{color: 'white', marginTop: '-15px', textAlign: 'center'}}>{item.title}</Text>
+                  </Box>
+              ))}
+            </Carousel>
+          </Box>
+          <Button
+              variant='primary'
+              style={{border: '1px white solid'}}
+          >
+            Подать заявку
+          </Button>
         </Box>
       </Container>
     </section>
-  );
+      // {/*</Parallax>*/}
+  )
 }
 
 const styles = {
@@ -34,33 +114,11 @@ const styles = {
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: 'relative',
     zIndex: 2,
-    '&::before': {
-      position: 'absolute',
-      content: '""',
-      bottom: 6,
-      left: 0,
-      height: '100%',
-      width: '100%',
-      zIndex: -1,
-      backgroundImage: `url(${ShapeLeft})`,
-      backgroundRepeat: `no-repeat`,
-      backgroundPosition: 'bottom left',
-      backgroundSize: '36%',
-    },
-    '&::after': {
-      position: 'absolute',
-      content: '""',
-      bottom: '40px',
-      right: 0,
-      height: '100%',
-      width: '100%',
-      zIndex: -1,
-      backgroundImage: `url(${ShapeRight})`,
-      backgroundRepeat: `no-repeat`,
-      backgroundPosition: 'bottom right',
-      backgroundSize: '32%',
-    },
-    container: {
+    backgroundImage: `url(${BgBanner})`,
+    backgroundRepeat: `no-repeat`,
+    backgroundPosition: 'center center',
+    backgroundSize: 'cover',
+      container: {
       minHeight: 'inherit',
       display: 'flex',
       flexDirection: 'column',
@@ -72,15 +130,5 @@ const styles = {
       textAlign: 'center',
       mb: ['40px', null, null, null, null, 7],
     },
-    imageBox: {
-      justifyContent: 'center',
-      textAlign: 'center',
-      display: 'inline-flex',
-      mb: [0, null, -6, null, null, '-40px', null, -3],
-      img: {
-        position: 'relative',
-        height: [245, 'auto'],
-      },
-    },
   },
-};
+}

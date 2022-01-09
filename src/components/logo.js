@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Image } from 'theme-ui';
-import { Link } from 'components/link';
+import { jsx, Image } from 'theme-ui'
+import { Link } from 'components/link'
 
 export default function Logo({ src, ...rest }) {
   return (
@@ -14,7 +14,7 @@ export default function Logo({ src, ...rest }) {
         }}
         {...rest}
       >
-        <Image src={src} alt='nextjs landing page logo' />
+        <Image src={src} alt='Дом из морских контейнеров' />
       </Link>
-  );
+  )
 }
