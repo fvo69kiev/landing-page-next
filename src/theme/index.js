@@ -358,12 +358,13 @@ export default {
       fontWeight: 'bold',
     },
     input: {
-      borderRadius: 8,
+      borderRadius: 5,
       borderColor: 'border_color',
-      height: 60,
+      backgroundColor: 'background_secondary',
+      height: 50,
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 1px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -430,5 +431,4 @@ export default {
       whiteSpace: 'nowrap !important',
     },
   },
-
 }

@@ -1,10 +1,11 @@
-import { useState } from 'react'
 /** @jsx jsx */
 import { jsx, Container, Box, Button, Image } from 'theme-ui'
+import React, { useState } from 'react'
 import { keyframes } from '@emotion/core'
-import Slogan from "../components/slogan"
+import Slogan from "components/slogan"
 import ModalVideo from 'react-modal-video'
 import { IoIosPlay } from 'react-icons/io'
+import FormPhone from 'sections/form-phone'
 
 import ShowPlace from 'assets/video-showRoom.jpg'
 import BgShowRoom from 'assets/bg-showRoom.jpg'
@@ -26,7 +27,7 @@ export default function ShowRoom() {
       />
       <Container sx={styles.containerBox}>
         <Box sx={styles.videoBox}>
-          <Image src={ShowPlace} alt='Show room' />
+          <Image src={ShowPlace} style={{border: '1px solid red'}} alt='Show room' />
           <Button
             sx={styles.videoBtn}
             onClick={handleClick}
@@ -43,19 +44,13 @@ export default function ShowRoom() {
         <Box sx={styles.googleMap}>
           <iframe
               src="https://www.google.com/maps/embed?pb=!1m20!1m8!1m3!1d163139.22306281776!2d30.3286144!3d50.2909878!3m2!1i1024!2i768!4f13.1!4m9!3e0!4m3!3m2!1d50.3696675!2d30.4583904!4m3!3m2!1d50.246879!2d30.2379772!5e0!3m2!1sru!2sua!4v1640815347737!5m2!1sru!2sua"
-              width='100%' height='100%' style={{border:0}} allowFullScreen="" loading="lazy">
+              width='100%' height='100%' style={{border:0, borderRadius: '10px'}} allowFullScreen="" loading="lazy">
           </iframe>
         </Box>
       </Container>
-      <Box sx={styles.contentBoxer}>
-        <Button
-            className='donate__btn'
-            variant='secondary'
-            arial-label='Get consultation'
-        >
-          Заказать просмотр
-        </Button>
-      </Box>
+
+      <FormPhone />
+
       <ModalVideo
         channel='youtube'
         isOpen={videoOpen}
@@ -80,7 +75,7 @@ const playPluse = keyframes`
 const styles = {
   showRoom: {
     pt: [8, null, 8, '70px', null, 8, null, '125px'],
-    pb: ['90px', null, 9, null, null, 10, null, '125px'],
+    // pb: ['90px', null, 9, null, null, 10, null, '125px'],
     overflow: 'hidden',
   },
   containerBox: {
@@ -213,12 +208,4 @@ const styles = {
     },
   },
 
-  contentBoxer: {
-    width: ['100%', '90%', '535px', null, '57%', '60%', '68%', '60%'],
-    mx: 'auto',
-    textAlign: 'center',
-    pt: '30px',
-    mb: '-30px',
-    transition: 'all .7s',
-  },
 }

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Flex } from 'theme-ui'
 import { keyframes } from '@emotion/core'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import PriceCard from 'components/price-card'
 // import ButtonGroup from 'components/button-group'

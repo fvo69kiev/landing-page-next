@@ -1,8 +1,8 @@
 import { ThemeProvider } from 'theme-ui'
 import theme from 'theme'
 
-import SEO from 'components/seo'
-import Layout from 'components/layout'
+import SEO from '../components/seo'
+import Layout from '../components/layout'
 import Banner from '../sections/banner'
 import Advantages from '../sections/advantages'
 import Building from '../sections/building'
@@ -13,6 +13,7 @@ import ShowRoom from '../sections/showroom'
 import Team from '../sections/team'
 import Rent from '../sections/rent'
 import ScrollTop from '../components/scrollTop'
+import FormOrder from '../sections/form-order'
 
 
 export default function IndexPage() {
@@ -29,6 +30,7 @@ export default function IndexPage() {
           <Rent />
           <ShowRoom />
           <Team />
+          <FormOrder />
           <ScrollTop />
         </Layout>
     </ThemeProvider>

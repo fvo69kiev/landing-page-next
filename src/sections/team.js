@@ -5,10 +5,11 @@ import TeamCard from 'components/team-card'
 import { FaFacebookF, FaTwitter, FaInstagram, FaPhone } from 'react-icons/fa'
 
 import BgTeam from 'assets/team/bg-team.jpg'
-import Viktor from '../assets/team/Viktor.jpg'
-import Julia from '../assets/team/Julia.jpg'
-import Oksana from '../assets/team/Oksana.jpg'
-import Valentin from '../assets/team/Valentin.jpg'
+
+import Viktor from 'assets/team/Viktor.jpg'
+import Julia from 'assets/team/Julia.jpg'
+import Oksana from 'assets/team/Oksana.jpg'
+import Valentin from 'assets/team/Valentin.jpg'
 
 
 const data = [

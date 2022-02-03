@@ -1,4 +1,5 @@
-import {Box, Card, Text, Heading, Button, Image} from 'theme-ui'
+/** @jsx jsx */
+import {jsx, Box, Card, Text, Heading, Button, Image} from 'theme-ui'
 import List from './list'
 import {useRouter} from "next/router"
 
@@ -49,7 +50,7 @@ export default function PriceCard({
               {priceWithUnit}
             </Text>
           </Box>
-          <Box sx={styles.buttonGroup}>
+            <Box sx={styles.buttonGroup}>
               <Button
                   variant='primary'
                   arial-label={buttonText}
@@ -57,7 +58,7 @@ export default function PriceCard({
               >
                 {buttonText}
               </Button>
-          </Box>
+            </Box>
         </Box>
       </Card>
   )

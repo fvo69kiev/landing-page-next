@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import {jsx, Container, Grid } from 'theme-ui'
-import Slogan from '../components/slogan'
+import Slogan from 'components/slogan'
 import AdvantCard from 'components/advant-card'
 
 import BgAdvant from 'assets/advantages/bg-advant.jpg'
@@ -42,26 +42,26 @@ const data = [
 
 export default function ContainerAdvantages() {
   return (
-   <section sx={styles.advant}>
-    <Container>
-      <Slogan
-        slogan='Почему морской контейнер'
-        title='Достоинства контейнера'
-        bgAdvant={true}
-      />
-      <Grid sx={styles.grid}>
-        {data.map((item) => (
-            <AdvantCard
-              key={item.id}
-              src={item.imgSrc}
-              alt={item.altText}
-              title={item.title}
-              text={item.text}
-            />
-        ))}
-      </Grid>
-    </Container>
-   </section>
+    <section sx={styles.advant}>
+      <Container>
+        <Slogan
+            slogan='Почему морской контейнер'
+            title='Достоинства контейнера'
+            bgAdvant={true}
+        />
+        <Grid sx={styles.grid}>
+          {data.map((item) => (
+              <AdvantCard
+                  key={item.id}
+                  src={item.imgSrc}
+                  alt={item.altText}
+                  title={item.title}
+                  text={item.text}
+              />
+          ))}
+        </Grid>
+      </Container>
+    </section>
   )
 }
 

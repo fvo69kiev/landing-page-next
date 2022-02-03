@@ -4,6 +4,7 @@ import Slogan from 'components/slogan'
 import List from 'components/list'
 import Rating from 'components/rating'
 import ButtonGroup from 'components/button-group'
+import {Link} from 'react-scroll'
 import Carousel from 'react-multi-carousel'
 
 import {IoIosPin, IoIosConstruct, IoMdReturnRight, IoIosHammer} from "react-icons/io"
@@ -186,15 +187,23 @@ export default function RentCard() {
                    </Heading>
                  </div>
                </div>
-               <Box sx={styles.buttonGroup}>
-                 <Button
-                     variant='primary'
-                     arial-label=''
-                     onClick={handleModal}
-                 >
-                   Подать заявку
-                 </Button>
-               </Box>
+               <Link
+                   to='form-order'
+                   spy={true}
+                   smooth={true}
+                   offset={-70}
+                   duration={700}
+               >
+                 <Box sx={styles.buttonGroup}>
+                   <Button
+                       variant='primary'
+                       arial-label=''
+                       onClick={handleModal}
+                   >
+                     Подать заявку
+                   </Button>
+                 </Box>
+               </Link>
              </Box>
          ))}
        </Carousel>

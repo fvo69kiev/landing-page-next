@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import {jsx, Container, Grid, Box, Heading, Text, Image, Button} from 'theme-ui'
 import Slogan from 'components/slogan'
+import {Link} from 'react-scroll'
 
 import PatternBG from 'assets/patternBG.png'
 import ArrowOdd from 'assets/arrowOdd.svg'
@@ -152,14 +153,22 @@ export default function Building() {
               </Box>
           ))}
         </Grid>
-          <Box sx={styles.contentBox}>
-              <Button
-                  variant='primary'
-                  sx={styles.buttonHowWeWork}
-              >
-                  Подать заявку
-              </Button>
-          </Box>
+          <Link
+              to='form-order'
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={700}
+          >
+              <Box sx={styles.contentBox}>
+                  <Button
+                      variant='primary'
+                      sx={styles.buttonHowWeWork}
+                  >
+                      Подать заявку
+                  </Button>
+              </Box>
+          </Link>
       </Container>
     </section>
   )

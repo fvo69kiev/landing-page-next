@@ -1,4 +1,5 @@
-import { Flex, Box, IconButton } from 'theme-ui'
+/** @jsx jsx */
+import {jsx, Flex, Box, IconButton } from 'theme-ui'
 
 export default function List({ items = [], parentStyle, childStyle }) {
   return (

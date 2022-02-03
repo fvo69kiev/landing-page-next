@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import {jsx, Container, Box, Heading, Text, Image, Button } from 'theme-ui'
-// import {Parallax} from 'react-parallax'
 
+import { Link } from 'react-scroll'
 import Carousel from 'react-multi-carousel'
-import ButtonGroup from "../components/button-group"
+import ButtonGroup from "components/button-group"
 
 import BgBanner from 'assets/banner/banner.jpg'
 
@@ -73,9 +73,10 @@ const carouselParams = {
   items: 3,
 }
 
+
 export default function Banner() {
+
   return (
-      // <Parallax bgImage={BgBanner} strength={500}>
     <section sx={styles.banner} id='home'>
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
@@ -95,16 +96,23 @@ export default function Banner() {
               ))}
             </Carousel>
           </Box>
-          <Button
-              variant='primary'
-              style={{border: '1px white solid'}}
+          <Link
+              to='form-order'
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={700}
           >
-            Подать заявку
-          </Button>
+            <Button
+                variant='primary'
+                style={{border: '1px white solid'}}
+            >
+              Подать заявку
+            </Button>
+          </Link>
         </Box>
       </Container>
     </section>
-      // {/*</Parallax>*/}
   )
 }
 
@@ -123,12 +131,12 @@ const styles = {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-    },
-    contentBox: {
-      width: ['100%', '90%', '535px', null, '57%', '60%', '68%', '60%'],
-      mx: 'auto',
-      textAlign: 'center',
-      mb: ['40px', null, null, null, null, 7],
-    },
+      },
+      contentBox: {
+        width: ['100%', '90%', '535px', null, '57%', '60%', '68%', '60%'],
+        mx: 'auto',
+        textAlign: 'center',
+        mb: ['40px', null, null, null, null, 7],
+      },
   },
 }

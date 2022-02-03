@@ -1,4 +1,5 @@
-import { Box, Text, Heading } from 'theme-ui'
+/** @jsx jsx */
+import {jsx,  Box, Text, Heading } from 'theme-ui'
 
 export default function Slogan({ title, slogan, isWhite, bgAdvant }) {
   return (

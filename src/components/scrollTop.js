@@ -20,7 +20,6 @@ export default function ScrollTop() {
     if (typeof window === 'object') window.addEventListener('scroll', onVisbile)
 
     return (
-        <>
             <div sx={styles.scrollToTop}>
                 <button
                     sx={styles.button}
@@ -30,7 +29,6 @@ export default function ScrollTop() {
                     <Image src={ArrowTop} sx={styles.image} alt='Кнопка вверх' />
                 </button>
             </div>
-        </>
     )
 }
 

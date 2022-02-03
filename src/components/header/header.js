@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Button } from 'theme-ui'
+import { jsx, Container, Flex, Button, Image } from 'theme-ui'
+import React from 'react'
 import { keyframes } from '@emotion/core'
 import { Link } from 'react-scroll'
-import Logo from 'components/logo'
 import LogoSvg from 'assets/logo.svg'
 import MobileDrawer from './mobile-drawer'
 import menuItems from './header.data'
@@ -18,9 +18,14 @@ export default function Header({ className }) {
               offset={-70}
               duration={700}
           >
-            <Logo src={LogoSvg} sx={styles.logo} title='Дом из морских контейнеров' />
+              <Image
+                  src={LogoSvg}
+                  style={{cursor: 'pointer'}}
+                  width={65}
+                  height={40}
+                  title='Дом из морских контейнеров'
+              />
           </Link>
-
           <Flex as='nav' sx={styles.nav}>
             {menuItems.map((menuItem, i) => (
                 <Link
@@ -36,13 +41,21 @@ export default function Header({ className }) {
                 </Link>
             ))}
           </Flex>
-          <Button
-              className='donate__btn'
-              variant='secondary'
-              arial-label='Get consultation'
+          <Link
+              to='form-contact'
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={700}
           >
-            Получить консультацию
-          </Button>
+              <Button
+                  className='donate__btn'
+                  variant='secondary'
+                  arial-label='Get consultation'
+              >
+                Получить консультацию
+              </Button>
+          </Link>
           <MobileDrawer />
         </Container>
       </header>
@@ -93,10 +106,6 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-  },
-  logo: {
-    width: '65px',
-    height: '40px',
   },
   nav: {
     mx: 'auto',

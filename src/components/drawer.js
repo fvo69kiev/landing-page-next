@@ -1,4 +1,5 @@
-import { Box } from 'theme-ui'
+/** @jsx jsx */
+import {jsx, Box } from 'theme-ui'
 import RcDrawer from 'rc-drawer'
 
 export default function Drawer ({ 

@@ -1,5 +1,6 @@
-import { useState } from 'react'
+/** @jsx jsx */
 import {jsx, Box } from 'theme-ui'
+import React, { useState } from 'react'
 import { Scrollbars } from 'react-custom-scrollbars'
 import Drawer from 'components/drawer'
 import { IoMdClose, IoMdMenu } from 'react-icons/io'
@@ -81,7 +82,6 @@ const styles = {
     justifyContent: 'center',
     flexShrink: '0',
     width: '26px',
-
     '@media screen and (min-width: 1024px)': {
       display: 'none',
     },
