@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import {jsx, Container, Grid } from 'theme-ui'
+import {jsx, Container, Grid} from 'theme-ui'
 import Slogan from 'components/slogan'
 import AdvantCard from 'components/advant-card'
 

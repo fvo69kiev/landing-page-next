@@ -19,7 +19,6 @@ export default function PriceCard({
     },
   })  {
   const router = useRouter()
-  const handleMore = () => {return router.push(`${source}`)}
 
   return (
       <Card
@@ -50,11 +49,12 @@ export default function PriceCard({
               {priceWithUnit}
             </Text>
           </Box>
-            <Box sx={styles.buttonGroup}>
+            <Box style={{textAlign: 'center', paddingTop: '35px',}}>
               <Button
                   variant='primary'
+                  sx={styles.buttonPrice}
                   arial-label={buttonText}
-                  onClick={handleMore}
+                  onClick={() => router.push(`${source}`)}
               >
                 {buttonText}
               </Button>
@@ -169,21 +169,30 @@ const styles = {
       },
     },
   },
-  buttonGroup: {
-    textAlign: 'center',
-    mt: ['30px', null, null, null, '35px'],
-    '.free__trail': {
-      color: 'secondary',
-      width: '100%',
-      justifyContent: 'center',
-      fontWeight: 700,
-      fontSize: ['14px', 1],
-      p: '20px 0 0',
-      Link: {
-        target: '_blank',
-      }
-    },
+  buttonPrice: {
+    border: '1px primary solid',
+    backgroundColor: 'primary_dark',
+    transition: 'all .7s',
+    '&:hover': {
+      color: 'primary',
+      backgroundColor: 'background',
+    }
   },
+  // buttonGroup: {
+  //   textAlign: 'center',
+  //   mt: ['30px', null, null, null, '35px'],
+  //   '.free__trail': {
+  //     color: 'secondary',
+  //     width: '100%',
+  //     justifyContent: 'center',
+  //     fontWeight: 700,
+  //     fontSize: ['14px', 1],
+  //     p: '20px 0 0',
+  //     Link: {
+  //       target: '_blank',
+  //     }
+  //   },
+  // },
   pricePerson: {
     display: 'flex',
     alignItems: 'center',

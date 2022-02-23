@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import {jsx, Flex, Box, IconButton } from 'theme-ui'
+import { jsx, Flex, Box, IconButton } from 'theme-ui'
 
 export default function List({ items = [], parentStyle, childStyle }) {
   return (
@@ -19,10 +19,13 @@ export default function List({ items = [], parentStyle, childStyle }) {
                 sx={{...childStyle}}
                 key={i}
             >
-                <IconButton sx={styles.listIcon} aria-label='list icon' title={item.title}>
+                <IconButton sx={styles.listIcon} aria-label='list icon' title={item.text}>
                     {item.icon}
                 </IconButton>
                 {item.text}
+                &nbsp;<IconButton sx={styles.listIcon} aria-label='list icon' title='Люкс'>
+                    {item.lux}
+                </IconButton>
             </Flex>
         ))}
       </Box>

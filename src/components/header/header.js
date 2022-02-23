@@ -1,23 +1,23 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Button, Image } from 'theme-ui'
-import React from 'react'
 import { keyframes } from '@emotion/core'
 import { Link } from 'react-scroll'
 import LogoSvg from 'assets/logo.svg'
 import MobileDrawer from './mobile-drawer'
 import menuItems from './header.data'
 
+
 export default function Header({ className }) {
   return (
-      <header sx={styles.header} className={className} id='header'>
-        <Container sx={styles.container}>
-          <Link
-              to='home'
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={700}
-          >
+        <header sx={styles.header} className={className} id='header'>
+          <Container sx={styles.container}>
+            <Link
+                to='home'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={700}
+            >
               <Image
                   src={LogoSvg}
                   style={{cursor: 'pointer'}}
@@ -25,40 +25,40 @@ export default function Header({ className }) {
                   height={40}
                   title='Дом из морских контейнеров'
               />
-          </Link>
-          <Flex as='nav' sx={styles.nav}>
-            {menuItems.map((menuItem, i) => (
-                <Link
-                  activeClass='active'
-                  to={menuItem.path}
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={700}
-                  key={i}
-                >
-                  {menuItem.label}
-                </Link>
-            ))}
-          </Flex>
-          <Link
-              to='form-contact'
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={700}
-          >
-              <Button
-                  className='donate__btn'
-                  variant='secondary'
-                  arial-label='Get consultation'
-              >
-                Получить консультацию
-              </Button>
-          </Link>
-          <MobileDrawer />
-        </Container>
-      </header>
+            </Link>
+            <Flex as='nav' sx={styles.nav}>
+              {menuItems.map((menuItem, i) => (
+                  <Link
+                      activeClass='active'
+                      to={menuItem.path}
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={700}
+                      key={i}
+                  >
+                    {menuItem.label}
+                  </Link>
+              ))}
+            </Flex>
+            <Link
+                to='form-contact'
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={700}
+            >
+            <Button
+                className='donate__btn'
+                variant='secondary'
+                arial-label='Get consultation'
+            >
+              Получить консультацию
+            </Button>
+            </Link>
+            <MobileDrawer />
+          </Container>
+        </header>
   )
 }
 

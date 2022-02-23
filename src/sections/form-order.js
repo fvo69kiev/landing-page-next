@@ -84,6 +84,9 @@ export default function FormOrder() {
                         type='submit'
                         isLoading={submitted}
                         loadingText="Submitting"
+                        variant='primary'
+                        arial-label=''
+                        sx={styles.buttonOrder}
                     >
                         Отправить
                     </Button>
@@ -138,5 +141,14 @@ const styles = {
     error: {
         padding: '5px 10px',
         background: '#D32047',
+    },
+    buttonOrder: {
+        border: '1px primary solid',
+        backgroundColor: 'primary_dark',
+        transition: 'all .7s',
+        '&:hover': {
+            color: 'primary',
+            backgroundColor: 'background',
+        },
     },
 }

@@ -158,8 +158,6 @@ const carouselParams = {
 
 export default function RentCard() {
 
-  const handleModal = () => {}
-
   return (
    <section id='rent' sx={styles.rent}>
      <Container>
@@ -194,11 +192,11 @@ export default function RentCard() {
                    offset={-70}
                    duration={700}
                >
-                 <Box sx={styles.buttonGroup}>
+                 <Box style={{textAlign: 'center', paddingTop: '35px',}}>
                    <Button
                        variant='primary'
                        arial-label=''
-                       onClick={handleModal}
+                       sx={styles.buttonRent}
                    >
                      Подать заявку
                    </Button>
@@ -216,7 +214,7 @@ export default function RentCard() {
 const styles = {
   rent: {
     pt: [8, null, 9, null, null, 10],
-    pb: [8, null, 9, null, null, 10],
+    pb: [4, null, 4, null, null, 7],
     backgroundImage: `url(${BgRent})`,
     backgroundRepeat: `no-repeat`,
     backgroundPosition: 'center center',
@@ -260,21 +258,21 @@ const styles = {
     borderRadius: '20px',
     opacity: .85,
     p: [
-      '30px 20px 35px',
-      '30px 25px 35px',
-      '30px 20px 35px',
-      '35px 30px 40px 40px',
-      '30px 30px 35px',
-      '35px 30px 40px 40px',
+      '20px 10px 25px',
+      '20px 15px 25px',
+      '20px 10px 25px',
+      '25px 20px 30px 30px',
+      '20px 20px 25px',
+      '25px 20px 30px 30px',
     ],
     bg: 'white',
     textAlign: 'left',
     m: [
-      '28px 5px 30px 5px',
-      '28px 20px 30px 20px',
-      '28px 15px 30px 15px',
-      '28px 15px 30px 15px',
-      '30px 20px 40px',
+      '18px 5px 20px 5px',
+      '18px 10px 30px 10px',
+      '18px 15px 20px 10px',
+      '18px 15px 20px 10px',
+      '20px 10px 30px',
     ],
     '&:hover': {
       boxShadow: '0px 4px 25px rgba(234,58,96, 0.45)',
@@ -362,17 +360,26 @@ const styles = {
       },
     },
   },
-
-  buttonGroup: {
-    textAlign: 'center',
-    mt: ['30px', null, null, null, '35px'],
-    '.free__trail': {
-      color: 'secondary',
-      width: '100%',
-      justifyContent: 'center',
-      fontWeight: 700,
-      fontSize: ['14px', 1],
-      p: '20px 0 0',
+  buttonRent: {
+    border: '1px primary solid',
+    backgroundColor: 'primary_dark',
+    transition: 'all .7s',
+    '&:hover': {
+      color: 'primary',
+      backgroundColor: 'background',
     },
   },
+
+  // buttonGroup: {
+  //   textAlign: 'center',
+  //   mt: ['30px', null, null, null, '35px'],
+  //   '.free__trail': {
+  //     color: 'secondary',
+  //     width: '100%',
+  //     justifyContent: 'center',
+  //     fontWeight: 700,
+  //     fontSize: ['14px', 1],
+  //     p: '20px 0 0',
+  //   },
+  // },
 }

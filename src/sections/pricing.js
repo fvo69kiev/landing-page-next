@@ -6,16 +6,14 @@ import Carousel from 'react-multi-carousel'
 import PriceCard from 'components/price-card'
 // import ButtonGroup from 'components/button-group'
 import Slogan from 'components/slogan'
-import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io'
+import { IoIosCheckmarkCircle, IoIosCloseCircle, IoMdRainy, IoIosBed, IoMdRestaurant, IoMdShirt, IoMdBed, IoIosAddCircleOutline } from 'react-icons/io'
 import BgPricing from 'assets/pricing/bg-pricing.jpg'
 
 import Ft20 from 'assets/pricing/ft-20.svg'
 import Ft40 from 'assets/logo.svg'
-
 import OnePerson from 'assets/pricing/one-person.svg'
 import TwoPerson from 'assets/pricing/two-persons.svg'
 import FourPerson from 'assets/pricing/four-persons.svg'
-
 
 const packages = {
   base: [
@@ -31,25 +29,25 @@ const packages = {
       points: [
         {
           id: 1,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRainy />,
           text: 'Ванная комната',
           isAvailable: true,
         },
         {
           id: 2,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRestaurant />,
           text: "Компактная кухня",
           isAvailable: true,
         },
         {
           id: 3,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdShirt />,
           text: 'Гардероб',
           isAvailable: true,
         },
         {
           id: 4,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoIosBed />,
           text: 'Диван-трансформер',
           isAvailable: true,
         },
@@ -73,25 +71,25 @@ const packages = {
       points: [
         {
           id: 1,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRainy />,
           text: 'Ванная комната',
           isAvailable: true,
         },
         {
           id: 2,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRestaurant />,
           text: "Компактная кухня",
           isAvailable: true,
         },
         {
           id: 3,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdShirt />,
           text: 'Гардероб',
           isAvailable: true,
         },
         {
           id: 4,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoIosBed />,
           text: 'Диван-трансформер',
           isAvailable: true,
         },
@@ -117,31 +115,31 @@ const packages = {
       points: [
         {
           id: 1,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRainy />,
           text: 'Ванная комната',
           isAvailable: true,
         },
         {
           id: 2,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRestaurant />,
           text: "Полноценная кухня",
           isAvailable: true,
         },
         {
           id: 3,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdShirt />,
           text: 'Прихожая с гардеробом',
           isAvailable: true,
         },
         {
           id: 4,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoIosBed />,
           text: 'Столовая',
           isAvailable: true,
         },
         {
           id: 5,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdBed />,
           text: 'Спальная комната',
           isAvailable: true,
         },
@@ -159,32 +157,32 @@ const packages = {
       points: [
         {
           id: 1,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRainy />,
           text: 'Ванная комната',
           isAvailable: true,
         },
         {
           id: 2,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRestaurant />,
           text: "Кухня с барной стойкой",
           isAvailable: true,
         },
         {
           id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: '2 шкафа-купе',
+          icon: <IoMdShirt />,
+          text: 'Шкаф-купе - 2 шт',
           isAvailable: true,
         },
         {
           id: 4,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoIosBed />,
           text: 'Столовая и зона отдыха',
           isAvailable: true,
         },
         {
           id: 5,
-          icon: <IoIosCheckmarkCircle />,
-          text: '2 просторные спальни',
+          icon: <IoMdBed />,
+          text: 'Просторная спальня - 2 шт',
           isAvailable: true,
         },
       ],
@@ -203,26 +201,28 @@ const packages = {
       points: [
         {
           id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Ванная комната - люкс',
+          icon: <IoMdRainy />,
+          text: 'Ванная комната',
           isAvailable: true,
         },
         {
           id: 2,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRestaurant />,
           text: "Компактная кухня",
           isAvailable: true,
         },
         {
           id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Гардероб -люкс',
+          icon: <IoMdShirt />,
+          text: 'Гардероб',
+          lux: <IoIosAddCircleOutline />,
           isAvailable: true,
         },
         {
           id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Диван-трансформер - люкс',
+          icon: <IoIosBed />,
+          text: 'Диван-трансформер',
+          lux: <IoIosAddCircleOutline />,
           isAvailable: true,
         },
         {
@@ -245,26 +245,28 @@ const packages = {
       points: [
         {
           id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Ванная комната - люкс',
+          icon: <IoMdRainy />,
+          text: 'Ванная комната',
           isAvailable: true,
         },
         {
           id: 2,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRestaurant />,
           text: "Компактная кухня",
           isAvailable: true,
         },
         {
           id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Гардероб - люкс',
+          icon: <IoMdShirt />,
+          text: 'Гардероб',
+          lux: <IoIosAddCircleOutline />,
           isAvailable: true,
         },
         {
           id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Диван-трансформер - люкс',
+          icon: <IoIosBed />,
+          text: 'Диван-трансформер',
+          lux: <IoIosAddCircleOutline />,
           isAvailable: true,
         },
         {
@@ -289,31 +291,33 @@ const packages = {
       points: [
         {
           id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Ванная комната - люкс',
+          icon: <IoMdRainy />,
+          text: 'Ванная комната',
+          lux: <IoIosAddCircleOutline />,
           isAvailable: true,
         },
         {
           id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: "Полноценная кухня - люкс",
+          icon: <IoMdRestaurant />,
+          text: "Полноценная кухня",
+          lux: <IoIosAddCircleOutline />,
           isAvailable: true,
         },
         {
           id: 3,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdShirt />,
           text: 'Прихожая с шкафом-купе',
           isAvailable: true,
         },
         {
           id: 4,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoIosBed />,
           text: 'Столовая',
           isAvailable: true,
         },
         {
           id: 5,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdBed />,
           text: 'Спальная комната',
           isAvailable: true,
         },
@@ -331,32 +335,35 @@ const packages = {
       points: [
         {
           id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Ванная комната - люкс',
+          icon: <IoMdRainy />,
+          text: 'Ванная комната',
+          lux: <IoIosAddCircleOutline />,
           isAvailable: true,
         },
         {
           id: 2,
-          icon: <IoIosCheckmarkCircle />,
+          icon: <IoMdRestaurant />,
           text: "Кухня с барной стойкой",
           isAvailable: true,
         },
         {
           id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: '2 шкафа-купе',
+          icon: <IoMdShirt />,
+          text: 'Шкаф-купе - 2 шт',
           isAvailable: true,
         },
         {
           id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Столовая и зона отдыха - люкс',
+          icon: <IoIosBed />,
+          text: 'Столовая и зона отдыха',
+          lux: <IoIosAddCircleOutline />,
           isAvailable: true,
         },
         {
           id: 5,
-          icon: <IoIosCheckmarkCircle />,
-          text: '2 просторные спальни - люкс',
+          icon: <IoMdBed />,
+          text: 'Просторная спальня - 2 шт',
+          lux: <IoIosAddCircleOutline />,
           isAvailable: true,
         },
       ],
@@ -558,6 +565,9 @@ const styles = {
       fontFamily: 'body',
       letterSpacing: '-0.24px',
       transition: 'all 0.3s',
+      '&:hover': {
+        boxShadow: '0 4px 6px rgba(43,43,43, 0.3)',
+      },
       '&.active': {
         color: 'primary',
         backgroundColor: '#ffffff',
